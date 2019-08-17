@@ -1,3 +1,6 @@
+*{
+  box-sizing: border-box;
+}
 .flash-box{
   color: $color-white;
   font-size: 1rem;
@@ -6,5 +9,36 @@
   width: 100vw;
   .notice{
     background-color: #38AEF0;
+  }
+}
+.wrapper{
+  box-sizing: border-box;
+  .chat-side{
+    width: 300px;
+    color: $color-white;
+    float: left;
+    .side-header{
+      background-color: #253141;
+      height: 100px;
+      display: flex;
+      align-items: center;
+      padding: 0 20px;
+      &__box{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        font-weight: bold;
+        &__menu{
+          display: flex;
+          list-style: none;
+          li{
+            margin-left: 0.3rem;
+          }
+          .fa{
+            color: $color-white;
+          }
+        }
+      }
+    }
   }
 }
