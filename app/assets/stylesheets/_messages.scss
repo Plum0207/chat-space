@@ -8,7 +8,7 @@
   text-align: center;
   width: 100vw;
   .notice{
-    background-color: #38AEF0;
+    background-color: $color-blue;
   }
 }
 .wrapper{
@@ -93,9 +93,9 @@
         line-height: 40px;
         padding: 0 20px;
         margin-top: 28px;
-        border: solid 1px #38AEF0;
+        border: solid 1px $color-blue;
         text-decoration: none;
-        color: #38AEF0;
+        color: $color-blue;
       }
     }
   }
