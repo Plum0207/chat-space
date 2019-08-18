@@ -12,10 +12,10 @@
   }
 }
 .wrapper{
+  display: flex;
   .chat-side{
     width: 300px;
     color: $color-white;
-    float: left;
     .side-header{
       background-color: #253141;
       height: 100px;
@@ -66,6 +66,37 @@
   }
   .chat-main{
     width: calc(100vw - 300px);
-    float: left;
+    .main-header{
+      height: 100px;
+      padding: 0 40px;
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid #eeeeee;
+      &__left-box{
+        margin-top: 35px;
+        &__current-group{
+          font-size: 20px;
+          color: #333333;
+          margin-bottom: 15px;
+        }
+        &__member-list{
+          display: flex;
+          font-size: 12px;
+          color: #999999;
+          &__member{
+            margin-left: 0.3rem;
+          }
+        }
+      }
+      &__edit-btn{
+        height: 40px;
+        line-height: 40px;
+        padding: 0 20px;
+        margin-top: 28px;
+        border: solid 1px #38AEF0;
+        text-decoration: none;
+        color: #38AEF0;
+      }
+    }
   }
 }

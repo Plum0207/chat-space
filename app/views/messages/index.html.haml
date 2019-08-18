@@ -18,5 +18,13 @@
       = render "group"
   .chat-main
     .main-header
+      .main-header__left-box
+        .main-header__left-box__current-group
+          text-group
+        %ul.main-header__left-box__member-list
+          "Member:"
+          %li.main-header__left-box__member-list__member
+          test-user
+      =link_to "Edit", "",class: "main-header__edit-btn"
     .messages
     .form
