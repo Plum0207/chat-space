@@ -6,7 +6,7 @@
     .side-header
       .side-header__box
         .side-header__box__user-name
-          test-user
+          username
         %ul.side-header__box__menu
           %li.side-header__box__menu__new-group
           =link_to "", class: "btn" do
@@ -15,7 +15,6 @@
           =link_to "", class: "btn" do
             %i.fa.fa-cog
     .groups
-      = render "group"
   .chat-main
     .main-header
     .messages
