@@ -1,16 +1,6 @@
 *{
   box-sizing: border-box;
 }
-.flash-box{
-  color: $color-white;
-  font-size: 1rem;
-  font-weight: lighter;
-  text-align: center;
-  width: 100vw;
-  .notice{
-    background-color: $color-blue;
-  }
-}
 .wrapper{
   display: flex;
   .chat-side{
