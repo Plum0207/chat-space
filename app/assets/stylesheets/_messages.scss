@@ -118,39 +118,40 @@
       height: 90px;
       padding: 20px 40px;
       background-color: #ddd;
-      display: flex;
-      .input-box{
-        width: 100%;
-        position: relative;
-        align-items: center;
-        &__text{
-          height: 50px;
+      form{
+        display: flex;
+        .input-box{
           width: 100%;
-          padding: 0 40px 0 10px;
-          color: $color-gray;
-          font-size: 16px;
-          border-style: none;
-        }
-        &__image{
-          position: absolute;
-          top: 50%;
-          right: 10px;
-          transform: translateY(-50%);
-          cursor: pointer;
-          &__file{
-            display: none;
+          position: relative;
+          align-items: center;
+          &__text{
+            height: 50px;
+            width: 100%;
+            padding: 0 40px 0 10px;
+            color: $color-gray;
+            font-size: 16px;
+            border-style: none;
+          }
+          &__image{
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
+            cursor: pointer;
+            &__file{
+              display: none;
+            }
           }
         }
+        .submit-btn{
+          width: 100px;
+          height: 50px;
+          margin-left: 15px;
+          background-color: $color-blue;
+          color: white;
+          cursor: pointer;
+          }
       }
-      .submit-btn{
-        width: 100px;
-        height: 50px;
-        margin-left: 15px;
-        background-color: $color-blue;
-        color: white;
-        cursor: pointer;
-        }
-
     }
   }
 }
