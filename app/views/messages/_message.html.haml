@@ -1,16 +1,11 @@
 .message
   .message__upper-info
     .message__upper-info__talker
-      test-user
+      = message.user.name
     .message__upper-info__date
-      yyyyddmm hhmmss
-  .message__text
-    こんにちは！
-.message
-  .message__upper-info
-    .message__upper-info__talker
-      test-user
-    .message__upper-info__date
-      yyyyddmm hhmmss
-  .message__text
-    さようなら！
+      = message.created_at.strftime("%Y/%m/%d(%a) %H:%M:%S")
+  .message__lower-info
+    -if message.content.present?
+      %p.message__lower-info__content
+        = message.content
+    =image_tag message.image.url, class: "message__lower-info_image" if message.image.present?

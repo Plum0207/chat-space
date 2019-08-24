@@ -92,6 +92,7 @@
       height: calc(100vh - 100px - 90px);
       padding: 46px 40px;
       background-color: #fafafa;
+      overflow: scroll;
       .message{
         padding-bottom: 40px;
         &__upper-info{
@@ -108,9 +109,11 @@
             margin-left: 10px;
           }
         }
-        &__text{
-          color: $color-gray;
-          font-size: 14px;
+        &__lower-info{
+          &__content{
+            color: $color-gray;
+            font-size: 14px;
+          }
         }
       }
     }

@@ -11,7 +11,7 @@
             test-user
       =link_to "Edit", "",class: "main-header__edit-btn"
     .messages
-      = render "message"
+      = render @messages
     .form
       = form_for [@group, @message] do |f|
         .input-box
