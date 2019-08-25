@@ -1,6 +1,9 @@
 *{
   box-sizing: border-box;
 }
+*::-webkit-scrollbar {
+  display: none;
+}
 .wrapper{
   display: flex;
   .chat-side{
@@ -37,6 +40,7 @@
       height: calc(100vh - 100px);
       background-color: #2f3e51;
       padding: 20px 20px 0;
+      overflow: scroll;
       .group-link{
         text-decoration-line: none;
         .group{
@@ -92,6 +96,7 @@
       height: calc(100vh - 100px - 90px);
       padding: 46px 40px;
       background-color: #fafafa;
+      overflow: scroll;
       .message{
         padding-bottom: 40px;
         &__upper-info{
@@ -108,9 +113,11 @@
             margin-left: 10px;
           }
         }
-        &__text{
-          color: $color-gray;
-          font-size: 14px;
+        &__lower-info{
+          &__content{
+            color: $color-gray;
+            font-size: 14px;
+          }
         }
       }
     }
@@ -118,39 +125,40 @@
       height: 90px;
       padding: 20px 40px;
       background-color: #ddd;
-      display: flex;
-      .input-box{
-        width: 100%;
-        position: relative;
-        align-items: center;
-        &__text{
-          height: 50px;
+      form{
+        display: flex;
+        .input-box{
           width: 100%;
-          padding: 0 40px 0 10px;
-          color: $color-gray;
-          font-size: 16px;
-          border-style: none;
-        }
-        &__image{
-          position: absolute;
-          top: 50%;
-          right: 10px;
-          transform: translateY(-50%);
-          cursor: pointer;
-          &__file{
-            display: none;
+          position: relative;
+          align-items: center;
+          &__text{
+            height: 50px;
+            width: 100%;
+            padding: 0 40px 0 10px;
+            color: $color-gray;
+            font-size: 16px;
+            border-style: none;
+          }
+          &__image{
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
+            cursor: pointer;
+            &__file{
+              display: none;
+            }
           }
         }
+        .submit-btn{
+          width: 100px;
+          height: 50px;
+          margin-left: 15px;
+          background-color: $color-blue;
+          color: white;
+          cursor: pointer;
+          }
       }
-      .submit-btn{
-        width: 100px;
-        height: 50px;
-        margin-left: 15px;
-        background-color: $color-blue;
-        color: white;
-        cursor: pointer;
-        }
-
     }
   }
 }
