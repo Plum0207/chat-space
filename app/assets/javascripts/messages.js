@@ -11,6 +11,12 @@ $(function(){
       dataType: 'json',
       processData: false,
       contentType: false
+    })
+    .done(function(message){
+      console.log(message)
+    })
+    .fail(function(){
+
     });
   });
 });
