@@ -59,6 +59,9 @@ $(function(){
     })
     .fail(function(){
       alert('エラー');
+    })
+    .always(function(){
+      $('.submit-btn').removeAttr('disabled');
     });
   });
 });
