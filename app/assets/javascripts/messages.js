@@ -53,8 +53,9 @@ $(function(){
     })
     .done(function(message){
       let html = buildHTML(message);
-      $('.messages').append(html)
-      $('#message_content').val('')
+      $('.messages').append(html);
+      $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight});
+      $('#message_content').val('');
     })
     .fail(function(){
       alert('エラー');
