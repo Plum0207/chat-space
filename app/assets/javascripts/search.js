@@ -26,9 +26,6 @@ function appendUserToGroup(userId, userName){
 
 $("#user-search-field").on("keyup",function(){
     let input = $("#user-search-field").val();
-    if(input.length == 0){
-      $("#user-search-result").empty(); 
-    };
 
     $.ajax({
       type: 'GET',
