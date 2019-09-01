@@ -35,5 +35,8 @@ $("#user-search-field").on("keyup",function(){
         appendErrMsgToHTML("一致するユーザーが見つかりません");
       }
     })
+    .fail(function(){
+      alert('ユーザー検索に失敗しました');
+    })
   });
 });
