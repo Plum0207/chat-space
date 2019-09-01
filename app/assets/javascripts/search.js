@@ -55,4 +55,9 @@ $("#user-search-result").on('click', ".user-search-add", function(){
   let userName = $(this).data("user-name");
   appendUserToGroup(userId, userName);
 });
+
+$(".js-add-user").on('click', ".user-search-remove", function(){
+  $(this).parent().remove();
+});
+
 });
