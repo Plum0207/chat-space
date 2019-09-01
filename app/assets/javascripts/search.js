@@ -15,6 +15,15 @@ function appendErrMsgToHTML(msg){
   $("#user-search-result").append(html);
 }
 
+function appendUserToGroup(userId, userName){
+  let html =`<div class='chat-group-user'>
+                <input name='group[user_ids][]' type='hidden' value=${ userId }>
+                <p class='chat-group-user__name'>${ userName }</p>
+                <div class='user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn'>削除</div>
+            </div>`
+  $(".js-add-user").append(html);
+}
+
 $("#user-search-field").on("keyup",function(){
     let input = $("#user-search-field").val();
 
@@ -41,5 +50,9 @@ $("#user-search-field").on("keyup",function(){
   });
 
 $("#user-search-result").on('click', ".user-search-add", function(){
+  $(this).parent().remove();
+  let userId = $(this).data("user-id");
+  let userName = $(this).data("user-name");
+  appendUserToGroup(userId, userName);
 });
 });
