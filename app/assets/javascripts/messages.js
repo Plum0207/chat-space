@@ -73,10 +73,10 @@ $(function(){
       data: { id: last_message_id },
       dataType: 'json',
     })
-    .done(funciton(messages){
+    .done(function(messages){
 
     })
-    .fail(funciton(){
+    .fail(function(){
 
     });
   };
