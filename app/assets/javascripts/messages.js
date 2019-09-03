@@ -64,4 +64,20 @@ $(function(){
       $('.submit-btn').removeAttr('disabled');
     });
   });
+
+  let reloadMessages = function(){
+    let last_message_id = $(".message").last().data("message_id");
+    $.ajax({
+      type: 'GET',
+      url: 'api/messages#index {:format=>"json"}',
+      data: { id: last_message_id },
+      dataType: 'json',
+    })
+    .done(funciton(messages){
+
+    })
+    .fail(funciton(){
+
+    });
+  };
 });
