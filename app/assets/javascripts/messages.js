@@ -1,6 +1,6 @@
 $(function(){
   function buildHTML(message){
-    let htmlUpperInfo = `<div class="message">
+    let htmlUpperInfo = `<div class="message" data-message_id="${message.id}">
                           <div class="message__upper-info">
                             <div class="message__upper-info__talker">
                             ${message.user_name}
@@ -73,11 +73,11 @@ $(function(){
       data: { id: last_message_id },
       dataType: 'json',
     })
-    .done(funciton(messages){
+    .done(function(messages){
 
     })
-    .fail(funciton(){
-
+    .fail(function(){
+      console.log('error');
     });
   };
 });
