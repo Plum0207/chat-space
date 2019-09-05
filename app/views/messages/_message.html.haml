@@ -4,8 +4,6 @@
       = message.user.name
     .message__upper-info__date
       = message.created_at.strftime("%Y/%m/%d(%a) %H:%M:%S")
-  .message__lower-info
-    -if message.content.present?
-      %p.message__lower-info__content
-        = message.content
+  -if message.content.present?
+    %p.message__text= message.content
     =image_tag message.image.url, class: "message__lower-info_image" if message.image.present?
