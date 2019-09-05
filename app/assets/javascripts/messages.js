@@ -75,7 +75,6 @@ $(function(){
         dataType: 'json',
       })
       .done(function(messages){
-        console.log(messages)
         if (messages.length !==0){
         let insertHTML = '';
         messages.forEach(function(message){
@@ -86,7 +85,7 @@ $(function(){
         }
       })
       .fail(function(){
-        console.log('error');
+        alert('error');
       });
     }
   };
