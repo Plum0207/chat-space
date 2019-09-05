@@ -1,25 +1,5 @@
 $(function(){
   function buildHTML(message){
-  let content = message.content? `${message.content}` : "";
-  let img = message.image? `<img class="message__lower-info_image" src="${message.image.url}">` : "";
-  let html = `<div class="message" data-message_id="${message.id}">
-                <div class="message__upper-info">
-                  <div class="message__upper-info__talker">
-                  ${message.user_name}
-                  </div>
-                  <div class="message__upper-info__date">
-                  ${message.created_at}
-                  </div>
-                <div class="message__lower-info">
-                  <p class="message__lower-info__content">
-                  ${content}
-                  </p>
-                  ${img}
-                </div>
-              </div>`
-  return html;
-  }
-  function buildHTML(message){
     let htmlUpperInfo = `<div class="message" data-message_id="${message.id}">
                           <div class="message__upper-info">
                             <div class="message__upper-info__talker">
