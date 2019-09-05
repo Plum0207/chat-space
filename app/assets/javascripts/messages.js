@@ -1,6 +1,6 @@
 $(function(){
   function buildHTML(message){
-    let htmlUpperInfo = `<div class="message">
+    let htmlUpperInfo = `<div class="message" data-message_id="${message.id}">
                           <div class="message__upper-info">
                             <div class="message__upper-info__talker">
                             ${message.user_name}
@@ -64,4 +64,30 @@ $(function(){
       $('.submit-btn').removeAttr('disabled');
     });
   });
+
+  let reloadMessages = function(){
+    if(location.pathname.match(/\/groups\/\d\/messages/)){
+      let last_message_id = $(".message").last().data("message_id");
+      $.ajax({
+        type: 'GET',
+        url: 'api/messages',
+        data: { id: last_message_id },
+        dataType: 'json',
+      })
+      .done(function(messages){
+        if (messages.length !==0){
+        let insertHTML = '';
+        messages.forEach(function(message){
+          insertHTML += buildHTML(message);
+        });
+        $('.messages').append(insertHTML);
+        $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight});
+        }
+      })
+      .fail(function(){
+        alert('error');
+      });
+    }
+  };
+  setInterval(reloadMessages, 5000);
 });
