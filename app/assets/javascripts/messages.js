@@ -9,31 +9,17 @@ $(function(){
                             ${message.created_at}
                             </div>
                           </div>`
+    let htmlContent =`<p class="message__lower-info__content">${message.content}</p>`
+    let htmlImg = `<img class="message__lower-info_image" src="${message.image.url}">`
+
     if(message.content && message.image.url) {
-      let html = htmlUpperInfo +
-                         `<div class="message__lower-info">
-                              <p class="message__lower-info__content">
-                              ${message.content}
-                              </p>
-                              <img class="message__lower-info_image" src="${message.image.url}">
-                            </div>
-                          </div>`
+      let html =htmlUpperInfo + htmlContent + htmlImg + '</div>'
       return html;
-    } else if (message.content) {
-      let html = htmlUpperInfo +
-                         `<div class="message__lower-info">
-                              <p class="message__lower-info__content">
-                              ${message.content}
-                              </p>
-                            </div>
-                          </div>`
+    } else if(message.content){
+      let html = htmlUpperInfo + htmlContent + '</div>'
       return html;
     } else if(message.image.url) {
-      let html = htmlUpperInfo +
-                         `<div class="message__lower-info">
-                            <img class="message__lower-info_image" src="${message.image.url}">
-                            </div>
-                          </div>`
+      let html =htmlUpperInfo + htmlImg + '</div>'
       return html;
     }
   };
