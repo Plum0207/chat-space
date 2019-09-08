@@ -42,6 +42,7 @@ $(function(){
       $('.messages').append(html);
       $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight});
       $('#message_content').val('');
+      $('#message_image').val('');
     })
     .fail(function(){
       alert('エラー');
