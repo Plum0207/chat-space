@@ -38,11 +38,18 @@ $(function(){
       contentType: false
     })
     .done(function(message){
-      let html = buildHTML(message);
-      $('.messages').append(html);
-      $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight});
       $('#message_content').val('');
       $('#message_image').val('');
+      if (((message.content && message.image) == null )){
+        alert('メッセージを入力してください');
+      }
+      else{
+        let html = buildHTML(message);
+        $('.messages').append(html);
+        $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight});
+        $('#message_content').val('');
+        $('#message_image').val('');
+      }
     })
     .fail(function(){
       alert('エラー');
